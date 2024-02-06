@@ -20,6 +20,7 @@ jobs:
           swift package --allow-writing-to-directory ./docs \
           generate-documentation \
           --target Passkey \
+          --hosting-base-path vapor-passkey \
           --output-path ./docs
 
       - name: Deploy to GitHub Pages
