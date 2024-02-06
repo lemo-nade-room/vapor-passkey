@@ -20,7 +20,6 @@ jobs:
           swift package --allow-writing-to-directory ./docs \
           generate-documentation \
           --target Passkey \
-          --hosting-base-path https://lemo-nade-room.github.io/vapor-passkey \
           --output-path ./docs
 
       - name: Deploy to GitHub Pages
