@@ -1,7 +1,7 @@
 import XCTest
-@testable import vapor_passkey
+@testable import Passkey
 
-final class vapor_passkeyTests: XCTestCase {
+final class PasskeyTests: XCTestCase {
     func testExample() throws {
         // XCTest Documentation
         // https://developer.apple.com/documentation/xctest
