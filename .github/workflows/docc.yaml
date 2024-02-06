@@ -1,0 +1,30 @@
+name: Deploy DocC to GitHub Pages
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Set up Swift
+        uses: fwal/setup-swift@v1
+
+      - name: Build DocC Documentation
+        run: |
+          swift build
+          swift package --allow-writing-to-directory ./docs \
+          generate-documentation \
+          --target Passkey \
+          --hosting-base-path https://lemo-nade-room.github.io/vapor-passkey \
+          --output-path ./docs
+
+      - name: Deploy to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./docs
