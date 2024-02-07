@@ -10,7 +10,7 @@ let package = Package(
         // Products define the executables and libraries a package produces, making them visible to other packages.
         .library(
             name: "Passkey",
-            targets: ["Passkey"]),
+            targets: ["Passkey"])
     ],
     dependencies: [
         // DocC
