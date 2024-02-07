@@ -25,7 +25,7 @@ extension WebAuthnCredential {
                 .field("public_key", .string, .required)
                 .field("current_sign_count", .uint32, .required)
                 .field(
-                    "passkey_user_id", .uuid, .required,
+                    "passkey_user_id", .string, .required,
                     .references("passkey_users", "username", onDelete: .cascade)
                 )
                 .field("created_at", .datetime, .required)
