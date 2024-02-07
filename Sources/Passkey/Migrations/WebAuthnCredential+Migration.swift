@@ -7,6 +7,10 @@ extension WebAuthnCredential {
     /// to modify the database schema. It defines how to create and remove the `webauth_credentals` table,
     /// including its fields and constraints, to store WebAuthn credentials associated with users.
     public struct Migration: AsyncMigration {
+
+        /// Initializes a new `Migration` instance.
+        public init() {}
+
         /// Prepares the database for storing `WebAuthnCredential` entities.
         ///
         /// This function creates the `webauth_credentals` table with the necessary fields: `id`, `public_key`,

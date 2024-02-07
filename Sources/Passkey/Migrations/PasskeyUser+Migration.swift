@@ -7,6 +7,10 @@ extension PasskeyUser {
     /// to modify the database schema. It defines how to create and remove the `passkey_users` table,
     /// including its fields and constraints.
     public struct Migration: AsyncMigration {
+
+        /// Initializes a new `Migration` instance.
+        public init() {}
+
         /// Prepares the database for storing `PasskeyUser` entities.
         ///
         /// This function creates the `passkey_users` table with the necessary fields: `username`, `display_name`, and `created_at`.
