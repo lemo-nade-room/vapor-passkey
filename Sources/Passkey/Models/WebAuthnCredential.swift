@@ -31,7 +31,7 @@ public final class WebAuthnCredential: Model, Content {
     /// This count is used to prevent replay attacks by ensuring that each authentication
     /// signature is unique.
     @Field(key: "current_sign_count")
-    public var currentSignCount: UInt32
+    public var currentSignCount: Int
 
     /// The associated user of the credential.
     ///
@@ -62,7 +62,7 @@ public final class WebAuthnCredential: Model, Content {
     public init(id: String, publicKey: String, currentSignCount: UInt32, username: String) {
         self.id = id
         self.publicKey = publicKey
-        self.currentSignCount = currentSignCount
+        self.currentSignCount = Int(currentSignCount)
         self.$user.id = username
     }
 

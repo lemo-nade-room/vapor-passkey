@@ -140,9 +140,9 @@ public struct PasskeyController: RouteCollection {
             credential: authenticationCredential,
             expectedChallenge: [UInt8](challenge),
             credentialPublicKey: [UInt8](credentialPublicKey),
-            credentialCurrentSignCount: credential.currentSignCount
+            credentialCurrentSignCount: UInt32(Int32(credential.currentSignCount))
         )
-        credential.currentSignCount = verifiedAuthentication.newSignCount
+        credential.currentSignCount = Int(verifiedAuthentication.newSignCount)
         try await credential.save(on: req.db)
 
         req.auth.login(credential.user)

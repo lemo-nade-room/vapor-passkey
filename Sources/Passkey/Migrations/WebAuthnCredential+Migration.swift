@@ -23,7 +23,7 @@ extension WebAuthnCredential {
             try await database.schema("webauth_credentals")
                 .field("id", .string, .identifier(auto: false), .required)
                 .field("public_key", .string, .required)
-                .field("current_sign_count", .uint32, .required)
+                .field("current_sign_count", .int, .required)
                 .field(
                     "passkey_user_id", .string, .required,
                     .references("passkey_users", "username", onDelete: .cascade)
